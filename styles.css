@@ -1,0 +1,60 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    height: 500px;
+}
+
+.contact-list {
+    width: 25%;
+    height: 100%;
+    background-color: rgb(237, 255, 158);
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.messages-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 5px;
+    width: 74%;
+    height: 100%;
+    background-color: rgb(255, 236, 182);
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.msg-block {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #000;
+    border-radius: 5px;
+    height: 89%;
+}
+
+.input-block {
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-msg {
+    width: 88%;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+.send-btn {
+    cursor: pointer;
+    width: 10%;
+    background-color: rgb(130, 255, 130);
+    border-radius: 5px;
+    border: none;
+    font-weight: 700;
+}
+
+.send-btn:hover {
+    color: rgb(29, 145, 0);
+}
