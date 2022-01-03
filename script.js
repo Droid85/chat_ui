@@ -35,20 +35,50 @@ const users = [
     },
 ];
 
+const curentUser = {
+  id: Math.random(),
+  name: 'Andrew',
+};
+
 const userMsg = {
     id: null,
-    userName: '',
-    userId: null,
+    userName: curentUser.name,
+    userId: curentUser.id,
     sendDate: null,
     text: '',
 };
 
 const contactsEl = document.querySelector('#contacts');
+const inputEl = document.querySelector('#input-msg');
+const msgBtnEl = document.querySelector('#msg-btn');
+const usersBlockEl = document.querySelector('#contacts');
+const messagesEl = document.querySelector('#messages');
 
 users.forEach(function(el) {
-    contactsEl.insertAdjacentHTML('beforeend', `<div class="user">${el.name}</div>`)
-})
+    contactsEl.insertAdjacentHTML('beforeend', `<div id="${el.id}" class="user">${el.name}</div>`)
+});
 
-// userMsg.sendDate = new Date();
+msgBtnEl.addEventListener('click', onBtnClick);
 
-// console.log(userMsg)
+function onBtnClick(e) {
+  if (!inputEl.value == '') {
+    userMsg.id = Math.random();
+    userMsg.sendDate = new Date().toLocaleDateString();
+    userMsg.text = inputEl.value;
+    renderMsg(userMsg);
+    clearInput();
+  }
+}
+
+function renderMsg(msg) {
+  messagesEl.insertAdjacentHTML('beforeend', `
+  <div class="user-mesages">
+    <div class="msg-header">${msg.userName}</div>
+    <div class="msg-text">${msg.text}</div>
+    <div class="msg-footer">${msg.sendDate}</div>
+  </div>`)
+}
+
+function clearInput() {
+  inputEl.value = '';
+}
